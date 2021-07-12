@@ -10,9 +10,7 @@ const findById = async (req, res) => {
   const { id } = req.params;
   const auth = await author.findById(id);
 
-  if (!auth) return res.status(404).json({
-    message: 'Not found'
-  });
+  if (!auth) return res.status(404).json({ message: 'Not found' });
 
   return res.status(200).json(auth);
 }
